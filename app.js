@@ -2,15 +2,16 @@ const express = require('express');
 
 const app = express();
 
+const path = require('path')
+
 const cors = require('cors')
 
 app.use(cors())
-
+app.use(express.urlencoded({extended:false}))
 app.use(express.json());
 
-app.post('/getNumber',(req,res)=>{
-    let {number} = req.body;
-    console.log(number);
+app.post('/',(req,res)=>{
+    let number = req.body.input;
        let isPrime = true;
 
        if(number===1){
@@ -35,4 +36,8 @@ app.post('/getNumber',(req,res)=>{
     }
 )
 
+
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname,'index.html'))
+})
 app.listen(3000,()=>console.log('server is running'));
