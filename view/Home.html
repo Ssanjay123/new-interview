@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="generatePassword(event)">
+        <label for="passwordlength">Enter Length</label>
+        <input id="password" type="number" name="password"><br>
+        <label for="uppercase">Include UPPERCASE</label>
+        <input id="uppercase" type="checkbox" name="uppercase"><br>
+        <label for="lowercase">Include lowercase</label>
+        <input id="lowercase" type="checkbox" name="lowercase"><br>
+        <label for="number">Include Numbers</label>
+        <input id="number" type="checkbox" name="number"><br>
+        <label for="characters">Include characters</label>
+        <input id="characters" type="checkbox" name="characters"><br>
+        <button>Generate Password</button>
+    </form>
+
+    <div>
+        <h1 id="password1"></h1>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+<script src="./password.js"></script>
+</html>
